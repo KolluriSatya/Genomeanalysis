@@ -1,0 +1,22 @@
+#!/bin/bash -l
+#SBATCH -A g2020008
+#SBATCH -p core
+#SBATCH -n 2
+#SBATCH -t 00:00:00
+#SBATCH -J pacbio_analysis
+#SBATCH --mail-type satyakprasannakolluri1995@gmail.com
+
+# Load modules
+module load bioinfo-tools
+module load samtools
+module load canu
+
+# My commands
+ cd /home/satya/
+ ln -s /proj/g2020008/nobackup/private/Your_Project/raw_data/file
+ ./raw_data/
+ ln -s /proj/g2020008/nobackup/private/  
+ ln -s /proj/g2020008/nobackup/private/5_Tean_Teh_2017/
+ ln -s /proj/g2020008/nobackup/private/5_Tean_Teh_2017/pacbio_data/file./pacbio_data
+ Canu
+ canu -d Run1 -p (pacbio_data) genomesize=47m -nanopore-raw reads/*FastQC   
