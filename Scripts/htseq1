@@ -1,0 +1,25 @@
+#!/bin/bash -l
+
+#SBATCH -A g2021012             # code of the project
+#SBATCH -M snowy                #jobs needed   
+#SBATCH -p core                 # core/ node
+#SBATCH -n 4                   # nr of cores/ nodes
+#SBATCH -t 02:00:00             # time needed (dd-hh:mm:ss)
+#SBATCH -J htseq_trail               # a name for your job
+#SBATCH --mail-type=ALL         #required
+#SBATCH --mail-user Satyakrishnaprasanna.Kolluri.2805@student.uu.se
+
+#Load modules
+module load bioinfo-tools
+module load samtools
+module load htseq
+
+cd /home/satya/Genomeanalysis/output
+
+#Code to run
+htseq-count --format='bam' --order='name' --stranded='no'  --type='CDS' --idattr='ID' --samout='htseq_output' /home/satya/Genomeanalysis/output/tophat_scaf6_outfiles/tophat_bam/accepted92_hits.bam /home/satya/Genomeanalysis/output/maker/maker_2/long_contig.all.gff > htseq_count92.txt
+htseq-count --format='bam' --order='name' --stranded='no'  --type='CDS' --idattr='ID' --samout='htseq_output' /home/satya/Genomeanalysis/output/tophat_scaf6_outfiles/tophat_bam/accepted93_hits.bam /home/satya/Genomeanalysis/output/maker/maker_2/long_contig.all.gff > htseq_count93.txt
+htseq-count --format='bam' --order='name' --stranded='no'  --type='CDS' --idattr='ID' --samout='htseq_output' /home/satya/Genomeanalysis/output/tophat_scaf6_outfiles/tophat_bam/accepted96_hits.bam /home/satya/Genomeanalysis/output/maker/maker_2/long_contig.all.gff > htseq_count96.txt
+
+
+
