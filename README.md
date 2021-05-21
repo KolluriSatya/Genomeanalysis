@@ -8,7 +8,7 @@ Scripts -  All of my bioinformatics tools that are performed in the bash scripts
 
 Raw Data - Softlinks that I created and used during this course, also contains the 49 genes provided by the authors of the paper.
 
-Results - The images of the results that are obtained during the analysis and the screenshots of results.
+Result Images - The images of the results that are obtained during the analysis and the screenshots of results.
 
 Project Introduction - The whole detail copy of the paper 5 in pdf format. 
 
